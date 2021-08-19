@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet"
+        href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+        crossorigin="anonymous">
+</head>
+<body>
+<div class="container">
+
+  <hr>
+  <h2>Yeni Yazar Ekle</h2>
+
+  <form action="#" th:action="@{/author/saveAuthor}" th:object="${author}"
+        method="POST">
+    <input type="text" th:field="*{authorName}"
+           placeholder="Yazar Adı" class="form-control mb-4 col-4">
+
+    <input type="text" th:field="*{authorExplanation}"
+           placeholder="Yazar Açıklaması" class="form-control mb-4 col-4">
+    <button type="submit" class="btn btn-info col-2"> Kaydet </button>
+  </form>
+
+  <hr>
+
+  <a th:href = "@{/}"> Yazar Listesine Dön</a>
+</div>
+</body>
+</html>
